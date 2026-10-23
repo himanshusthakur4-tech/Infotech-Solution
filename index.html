@@ -97,6 +97,24 @@ section {
 .whatsapp-float:hover {
   transform: translateY(-5px);
 }
+@media (max-width: 760px) {
+  .whatsapp-float {
+    font-size: 0 !important;
+    padding: 14px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-float::before {
+    content: "💬";
+    font-size: 25px;
+  }
+}
 </style>
 </head>
 
