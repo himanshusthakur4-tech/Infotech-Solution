@@ -1,12 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infotech Solution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="Infotech Solution offers computer hardware, networking and CCTV solutions.">
+<title>Infotech Solution | IT & Security Services</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root{--blue:#1264f4;--navy:#102448;--muted:#64748b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'DM Sans',Arial,sans-serif;color:var(--navy);background:#fff}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid #e8effa}
+nav{max-width:1150px;margin:auto;padding:19px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-size:21px;font-weight:800;letter-spacing:-.8px}
+.logo span{color:var(--blue)}
+.links{display:flex;gap:26px;font-size:14px;font-weight:600}
+.links a:hover{color:var(--blue)}
+.hero{background:radial-gradient(circle at 85% 20%,#cfe3ff 0%,transparent 42%),linear-gradient(135deg,#fff,#f0f7ff);padding:110px 6%;overflow:hidden}
+.hero-inner{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:60px}
+.tag{display:inline-block;color:var(--blue);background:#e5efff;padding:10px 16px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1px}
+h1{font-size:clamp(42px,5.5vw,74px);line-height:1.08;letter-spacing:-3px;margin:25px 0}
+h1 span{color:var(--blue)}
+.hero p{font-size:17px;line-height:1.85;color:var(--muted);max-width:530px}
+.buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;padding:15px 25px;border-radius:11px;background:var(--blue);color:white;font-weight:700;transition:.3s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 25px #1264f43b}
+.btn.outline{background:white;color:var(--blue);border:1px solid #bdd5ff}
+.visual{position:relative;min-height:340px;display:grid;place-items:center}
+.orbit{width:min(100%,350px);aspect-ratio:1;border:2px dashed #a6c9ff;border-radius:50%;display:grid;place-items:center;animation:spin 30s linear infinite}
+.core{width:73%;aspect-ratio:1;background:linear-gradient(135deg,#1275ff,#1236a8);border-radius:35%;display:grid;place-items:center;box-shadow:0 25px 65px #1264f455;animation:spin 30s linear infinite reverse}
+.core svg{width:55%;stroke:white;fill:none;stroke-width:2.5}
+.float{position:absolute;background:white;border:1px solid #e2edff;border-radius:14px;padding:14px 18px;box-shadow:0 12px 35px #153d7819;font-weight:800;color:var(--blue);animation:bob 4s ease-in-out infinite}
+.f1{top:12%;left:0}.f2{right:0;top:45%;animation-delay:1s}.f3{bottom:5%;left:10%;animation-delay:2s}
+section{padding:90px 6%}
+.container{max-width:1150px;margin:auto}
+.section-label{font-size:12px;letter-spacing:2px;font-weight:800;color:var(--blue)}
+h2{font-size:clamp(30px,4vw,43px);letter-spacing:-1.5px;margin:12px 0}
+.intro{color:var(--muted);line-height:1.8;max-width:650px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.card{background:white;border:1px solid #e6edf8;border-radius:20px;padding:32px;transition:.35s;box-shadow:0 8px 30px #143b7009}
+.card:hover{transform:translateY(-9px);border-color:#9fc4ff;box-shadow:0 20px 45px #1264f421}
+.card .symbol{font-size:36px;background:#eaf2ff;width:75px;height:75px;display:grid;place-items:center;border-radius:17px}
+.card h3{font-size:21px;margin:25px 0 10px}
+.card p{color:var(--muted);line-height:1.8;font-size:15px}
+.about{background:#f4f8ff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-art{min-height:280px;background:linear-gradient(135deg,#176cff,#0b2e8e);border-radius:25px;display:grid;place-items:center;color:white;font-size:clamp(28px,5vw,52px);font-weight:800;text-align:center;padding:35px;box-shadow:0 25px 45px #1264f42c}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;font-weight:700;font-size:14px}
+.features span:before{content:"✓";color:var(--blue);margin-right:9px}
+.contact{text-align:center}
+.contact .intro{margin:0 auto 30px}
+footer{background:#0d1e3d;color:#d1dcf0;padding:35px 6%;text-align:center;font-size:14px}
+footer strong{color:white}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}
+.reveal.show{opacity:1;transform:translateY(0)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{50%{transform:translateY(-14px)}}
+@media(max-width:760px){
+nav{padding:17px 5%}.logo{font-size:19px}.links{gap:12px;font-size:12px}
+.hero{padding:75px 6%}.hero-inner,.about-grid{grid-template-columns:1fr;gap:35px}
+h1{letter-spacing:-2px}.hero p{font-size:15px}
+.visual{min-height:310px}.orbit{width:260px}.float{font-size:12px}
+.cards{grid-template-columns:1fr}section{padding:65px 6%}
+.features{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}
+.reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
-  <h1>Welcome to Infotech Solution</h1>
-  <p>Computer Hardware, Networking & CCTV Solutions</p>
+
+<header>
+<nav>
+<a class="logo" href="#">Infotech<span>Solution.</span></a>
+<div class="links">
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
+<main>
+<div class="hero" id="home">
+<div class="hero-inner">
+<div class="reveal">
+<div class="tag">YOUR TECHNOLOGY PARTNER</div>
+<h1>Smart Technology.<br><span>Better Solutions.</span></h1>
+<p>Complete Computer Hardware, Networking & CCTV Solutions. Helping you build a smarter, more connected and secure environment.</p>
+<div class="buttons">
+<a href="#services" class="btn">Explore Services →</a>
+<a href="#contact" class="btn outline">Get in Touch</a>
+</div>
+</div>
+<div class="visual" aria-hidden="true">
+<div class="orbit">
+<div class="core">
+<svg viewBox="0 0 100 100">
+<rect x="15" y="22" width="70" height="48" rx="6"/>
+<path d="M36 82h28M50 70v12M27 35h46M27 45h30M27 55h45"/>
+</svg>
+</div>
+</div>
+<div class="float f1">💻 Hardware</div>
+<div class="float f2">📡 Networking</div>
+<div class="float f3">📹 CCTV Security</div>
+</div>
+</div>
+</div>
+
+<section id="services">
+<div class="container">
+<div class="reveal">
+<div class="section-label">WHAT WE DO</div>
+<h2>Our Professional Services</h2>
+<p class="intro">Technology solutions designed to support your everyday needs, connectivity and security.</p>
+</div>
+<div class="cards">
+<article class="card reveal">
+<div class="symbol">💻</div>
+<h3>Computer Hardware</h3>
+<p>Computer hardware assistance, troubleshooting, upgrades and IT support solutions.</p>
+</article>
+<article class="card reveal">
+<div class="symbol">🌐</div>
+<h3>Networking Solutions</h3>
+<p>Network setup, connectivity, router configuration and reliable networking solutions.</p>
+</article>
+<article class="card reveal">
+<div class="symbol">📹</div>
+<h3>CCTV Solutions</h3>
+<p>CCTV camera setup, surveillance system solutions and security support.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container about-grid">
+<div class="about-art reveal">INNOVATE.<br>CONNECT.<br>SECURE.</div>
+<div class="reveal">
+<div class="section-label">ABOUT INFOTECH SOLUTION</div>
+<h2>Technology Made Simple.</h2>
+<p class="intro">At Infotech Solution, our focus is on practical computer hardware, networking and CCTV solutions for homes and businesses.</p>
+<div class="features">
+<span>Hardware Solutions</span>
+<span>Network Connectivity</span>
+<span>CCTV Systems</span>
+<span>Technology Support</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container reveal">
+<div class="section-label">LET'S CONNECT</div>
+<h2>Need a Technology Solution?</h2>
+<p class="intro">Looking for hardware, networking or CCTV assistance? Get in touch with Infotech Solution to discuss your requirements.</p>
+<a class="btn" href="mailto:">Contact Us →</a>
+<p style="color:#64748b;font-size:13px;margin-top:18px">Contact details will be added soon.</p>
+</div>
+</section>
+</main>
+
+<footer>
+<strong>Infotech Solution</strong>
+<p>Computer Hardware • Networking • CCTV Solutions</p>
+<p>© <span id="year"></span> Infotech Solution. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const elements=document.querySelectorAll(".reveal");
+if("IntersectionObserver" in window){
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+observer.unobserve(entry.target);
+}
+});
+},{threshold:0.1});
+elements.forEach(el=>observer.observe(el));
+}else{
+elements.forEach(el=>el.classList.add("show"));
+}
+</script>
 </body>
 </html>
